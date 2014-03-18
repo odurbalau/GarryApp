@@ -1,0 +1,56 @@
+// Place all the styles related to the Cards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+#deckcontainer{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  width:500px;
+  min-height:400px;
+}
+
+.cardcontainer{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cardContents{
+  display: none;
+  }
+
+.card{
+  margin-left:auto;
+  margin-right:auto;
+  min-width:500px;
+  min-height:300px;
+  background-color:#940609;
+  text-align: center;
+  cursor:pointer;
+}
+
+
+.card h4{
+  font-size: 10pt;
+  color: white;
+}
+
+.card p{
+  font-size: 26pt;
+  color: white;
+  line-height:100%;
+}
+
+.cardControls{
+  text-align: center;
+}
+
+.cardControls form{
+  display: inline-block;
+}
+
+.cardContents p {
+  color: white;
+}

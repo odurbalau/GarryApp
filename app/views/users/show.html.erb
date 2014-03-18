@@ -1,0 +1,30 @@
+<% pagetitle = "User Information" %>
+<% content_for :title, pagetitle %>
+<h1><%= pagetitle %></h1>
+<p>
+  <b>Username:</b>
+  <%= @user.username %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<%= image_tag @user.image_url(:thumb) if @user.image? %>
+
+<p>
+  <b>Crypted password:</b>
+  <%= @user.password_digest %>
+</p>
+
+<p>
+  <b>Password salt:</b>
+  <%= @user.password_salt %>
+</p>
+
+<p>
+  <b>Persistence token:</b>
+  <%= @user.persistence_token %>
+</p>
+

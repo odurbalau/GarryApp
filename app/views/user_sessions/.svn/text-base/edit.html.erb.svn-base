@@ -1,0 +1,4 @@
+<% pagetitle = "Editing user_session" %>
+<% content_for :title, pagetitle %>
+<h1><%= pagetitle %></h1>
+<%= render 'form' %>

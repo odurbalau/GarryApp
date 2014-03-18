@@ -1,0 +1,33 @@
+<% pagetitle = current_user.username + "'s Profile" %>
+<% content_for :title, pagetitle %>
+<h1><%= pagetitle %></h1>
+<% if current_user %>
+	<div id="subnavmenu">
+	<ul>
+		<li>
+    		<%= link_to "Edit Profile", edit_user_path(current_user.id)%>
+    	</li>
+    </ul>
+	</div>
+<% end %>
+
+
+<div class="center">
+<%= link_to deck_stats_path, :class => "tile" do %>
+<%= @quiz_ready_count.to_s %><br>Learning sessions due
+<% end %>
+
+<%= link_to deck_stats_path, :class => "tile" do %>
+<%= @quiz_count.to_s %><br>Decks in learning portfolio
+<% end %>
+
+<br>
+
+<%= link_to decks_path, :class => "tile" do %>
+<%= @deck_count.to_s %><br>Decks
+<% end %>
+
+<%= link_to cards_path, :class => "tile" do %>
+<%= @card_count.to_s %><br>Cards
+<% end %>
+</div>

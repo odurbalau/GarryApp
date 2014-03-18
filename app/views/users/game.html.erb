@@ -1,0 +1,80 @@
+<% pagetitle = "Choose Which Interest You Like More "%>
+<% content_for :title, pagetitle %>
+<h1><%= pagetitle %></h1>
+
+<div id="interestscontainer">
+  <!-- randomize the array of interests -->
+<% @interestscontainer = @interests.each
+   @interestscontainer = @interestscontainer.sort_by { rand } %> 
+   <!-- keep a counter to act as the index or "round" currently on -->
+   <% index = 0 %>
+
+   <!-- keep a counter of the number of interests completed -->
+   <% completed = 0 %>
+<% @interestscontainer.each_slice(2) do |interest1, interest2| %>
+<div class="interestcontainer1">
+
+<div style="display:inline" id="interestContents1_<%= index %>">
+  <h4><%= interest1.name %></h4>
+<%= image_tag interest1.image_url(:thumb) if interest1.image? %>
+  <div class="button">
+  <%= button_to "This One", rate_users_path(:interest_id => interest1.id), :remote => true, :id=>"interest1_" + index.to_s, :onclick => "hideInterest_" + index.to_s + "()" %>
+</div> <!-- close button -->
+</div> <!-- close interestContents -->
+
+</div> <!-- close interestcontainer1 -->
+
+<div class="interestcontainer2">
+
+<div style="display:inline" id="interestContents2_<%= index %>">
+  <h4><%= interest2.name %></h4>
+<%= image_tag interest2.image_url(:thumb) if interest2.image? %>
+
+<div class="button">
+<%= button_to "This One", rate_users_path(:interest => interest2), :method => :update, :remote => true, :id=>"interest2_" + index.to_s, :onclick => "hideInterest_" + index.to_s + "()"  %>
+</div> <!-- close button -->
+
+</div> <!-- close interestContents -->
+</div> <!-- close interestcontainer2 -->
+
+</div>  <!-- close interestscontainer -->
+
+<script type="text/javascript">
+function hideInterest_<%= index %>()
+{
+  <% completed = completed + 1; %>
+  document.getElementById("interest1_<%= index %>").style.display = "none";
+  document.getElementById("interest2_<%= index %>").style.display = "none";
+  //(".interestContents1_<%= index %>").hide()
+  //(".interestContents2_<%= index %>").hide()
+
+   //element.style.display = "none";
+}
+</script>
+
+<!-- increment the index -->
+   <% index = index + 1 %>
+
+<% end %> <!-- end for loop -->
+
+<div id="DisplayResults"
+<%= button_to "Match With Friends!", "/users" , :id => "ShowResults", :method => :get %>
+</div>
+
+<% if completed == @interestscontainer.size / 2 %>
+      <script type="text/javascript">
+$(function(){
+  $("#ShowResults").show();
+});
+</script>
+<% else %>
+      <script type="text/javascript">
+$(function(){
+  $("#ShowResults").hide();
+});
+</script>
+<% end %>
+
+</div> <!-- close interestscontainer -->
+
+

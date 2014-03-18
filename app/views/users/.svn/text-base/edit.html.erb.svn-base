@@ -1,0 +1,4 @@
+<% pagetitle = "Editing Profile" %>
+<% content_for :title, pagetitle %>
+<h1><%= pagetitle %></h1>
+<%= render :partial => "form", :locals => {:edit => true} %>

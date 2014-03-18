@@ -1,0 +1,13 @@
+<% pagetitle = "Home" %>
+<% content_for :title, pagetitle %>
+
+
+<h1 class="heading">Find Friends With Similar Interests!</h1>
+<% unless current_user %>
+<div class="center">
+	<%= button_to "Sign Up, for Free", :register%>
+</div>
+<% end %>   	
+<p>
+Find out what friends you share common interests with!
+</p>

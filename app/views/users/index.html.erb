@@ -1,0 +1,38 @@
+<% pagetitle = current_user.username + "'s Profile" %>
+<%= image_tag @user.image_url(:thumb) if @user.image? %>
+
+<% content_for :title, pagetitle %>
+<h1><%= pagetitle %></h1>
+<% if current_user %>
+	<div id="subnavmenu">
+	<ul>
+		<li>
+    		<%= link_to "Edit Profile", edit_user_path(current_user.id)%>
+        <br>
+    </li>
+        <li>
+        <%= link_to 'Play Game', game_users_path(current_user.id) %>
+
+    	</li>
+    </ul>
+	</div>
+<% end %>
+
+<div class="center">
+    
+       
+        <% @friend = findFriends %>
+    <% unless @friend.nil? %>   
+        <% @interests = findInterests() %>
+
+        <h2>Friends With Similar Interests: </h2>
+        <h3><%= @friend.username %></h3>
+        <%= image_tag @friend.image_url(:thumb) if @friend.image? %>
+
+        <h4> Interests in common are </h4>
+
+          <% @interests.each do |interest| %>
+            <h4><%= interest.name %></h4>
+          <% end %>
+    <% end %>
+</div>

@@ -1,0 +1,36 @@
+.tile{
+  margin: 20px;
+  font-size: 36px;
+  text-align: center;
+  display: inline-block;
+  width: 200px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #FFF;
+  border: 3px solid #940609;
+  text-decoration: none;
+  font-weight: bold;
+  color: #333 !important;
+}
+
+a.tile:link{
+  
+}
+
+a.tile:visited{
+  color: #333;
+}
+
+a.tile:active{
+  color: #FFF;
+}
+
+a.tile:hover{
+  color: #FFF !important;
+  background-color: #940609;
+  -webkit-transition: 200ms linear;
+  -moz-transition: 200ms linear;
+  -o-transition: 200ms linear;
+  -ms-transition: 200ms linear;
+  transition: 200ms linear;
+}

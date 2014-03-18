@@ -1,0 +1,4 @@
+<% pagetitle = "Create New User Account" %>
+<% content_for :title, pagetitle %>
+<h1><%= pagetitle %></h1>
+<%= render 'form' %>

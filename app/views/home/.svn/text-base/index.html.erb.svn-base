@@ -1,0 +1,21 @@
+<% pagetitle = "Home" %>
+<% content_for :title, pagetitle %>
+
+
+<h1 class="heading">A Smart way of learning</h1>
+<% unless current_user %>
+<div class="center">
+	<%= button_to "Sign Up, for Free", :register%>
+</div>
+<% end %>
+    	
+<p>
+Online flashcards are a great way to study! Flashcards are effective because they are founded on the principles of rote and memorization. 
+Cardinal facilitates the tools needed to create decks of flashcards.
+</p>
+<p>You will be able to create private decks, public decks, or use decks made public by others. 
+You will have statistical data in his profile tracking his progress with each deck (individual statistics and relative to others who’ve used that same deck.) 
+To create the optimum learning experience with flash cards, deck-learning sessions will implement the Spaced Repetition algorithm to determine when and which cards learned previously you should review and to put more emphasis on cards the user is struggling with or have just learned more recently.
+The content will be crowd-sourced.
+The system’s goal is it provide the user with a central location for his learning needs, tracker for his progress along the journey, and an optimal learning algorithm focusing on long term retention of knowledge.   
+</p>

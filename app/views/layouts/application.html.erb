@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>"Match Friends Game"</title>
+  <%= stylesheet_link_tag    "scaffolds", 'jquery-ui-1.10.2.custom.css', :media => "all" %>
+  <%= stylesheet_link_tag    "users", :media => "all" %>
+  <%= stylesheet_link_tag    "global", :media => "all" %>
+  <%= stylesheet_link_tag    "layout", :media => "all" %>
+  <%= stylesheet_link_tag    "profile", :media => "all" %>
+  
+  
+  <%= javascript_include_tag 'jquery-1.9.1.min.js', 'jquery-ui-1.10.2.custom.min.js', "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="container">
+
+<div id="header">
+
+<div id="usermenu">
+<ul>
+    <% if current_user %>
+    <li id="username">
+    Hi, <%= current_user.first_name %> <%= current_user.last_name %>
+    </li>
+    <li>
+    <%= link_to current_user.username + "'s Profile", users_path %>
+    </li>
+    <li>
+    <%= link_to "Logout", :logout%>
+    </li>
+    <% else %>
+    <li>
+    <%= link_to "Register", :register%> 
+    </li>
+    <li> 
+    <%= link_to "Login", :login %>
+    </li>
+    <% end %>
+</ul>
+</div> <!-- close usermenu -->
+</div> <!-- close header -->
+
+<div id="navmenu">
+  <ul>
+    <% if current_user %>
+    <li><%= link_to "Interests", interests_path %></li>
+    <% end %>
+    </ul>
+</div>
+
+<div id="content">
+<p id="notice"><%= notice %></p>
+
+<%= yield %>
+</div>
+
+<div id="footer">
+	
+</div>
+
+</div>
+</body>
+</html>

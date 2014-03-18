@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/CMPT470-1131-g-null/!svn/ver/137/Project/app/views/user_sessions
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/CMPT470-1131-g-null/!svn/ver/137/Project/app/views/user_sessions/new.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/CMPT470-1131-g-null/!svn/ver/137/Project/app/views/user_sessions/show.html.erb
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/CMPT470-1131-g-null/!svn/ver/137/Project/app/views/user_sessions/edit.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/CMPT470-1131-g-null/!svn/ver/129/Project/app/views/user_sessions/_form.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/CMPT470-1131-g-null/!svn/ver/137/Project/app/views/user_sessions/index.html.erb
+END
