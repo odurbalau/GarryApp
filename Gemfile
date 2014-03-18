@@ -36,6 +36,8 @@ group :production do
   gem 'rails_12factor'
 end
 
+# need this apparently for Heroku
+gem 'unicorn'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
