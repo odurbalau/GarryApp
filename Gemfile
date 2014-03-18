@@ -17,7 +17,11 @@ gem 'rb-readline'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+# heroku doesn't support sqlite and it will bitch hard if it sees this gem
+group :test, :development do
+	gem 'sqlite3'
+end
+
 gem 'will_paginate', '~> 3.0'
 
 # Gems used only for assets and not required
