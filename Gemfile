@@ -19,7 +19,7 @@ gem 'rb-readline'
 
 # heroku doesn't support sqlite and it will bitch hard if it sees this gem
 group :test, :development do
-	gem 'sqlite3'
+  gem 'sqlite3'
 end
 
 gem 'will_paginate', '~> 3.0'
@@ -42,8 +42,6 @@ gem 'unicorn'
   # gem 'therubyracer', :platforms => :ruby
 
 gem 'uglifier', '>= 1.0.3'
-
-
 gem 'jquery-ui-rails'
 gem "jquery-rails", "~> 2.3.0"
 gem 'jquery-ui-themes'
